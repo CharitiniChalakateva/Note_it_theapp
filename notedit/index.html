@@ -10,7 +10,9 @@
 <body>
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <button id="faqBtn" class="icon-btn left">FAQ</button>
+      <div class="left-controls">
+        <button id="faqBtn" class="icon-btn left">FAQ</button>
+      </div>
 
       <div class="brand">
         <div class="logo-text"><span class="logo-main">Noted</span> <span class="logo-accent">It</span></div>
@@ -36,16 +38,18 @@
 
     <section id="notebooksSection" class="card notebooks-area">
       <h2 data-i18n="notebooks">Τετράδια</h2>
-      <div id="addNotebook" class="add-notebook">
+
+      <div id="addNotebook" class="add-notebook" title="Δημιουργία τετραδίου">
         <div class="plus">+</div>
         <div class="hint" data-i18n="add_hint">Πάτησε για να δημιουργήσεις νέο τετράδιο</div>
       </div>
+
       <div id="notebooksWrap" class="notebooks-wrap"></div>
     </section>
   </main>
 
   <footer class="site-footer" id="siteFooter">
-    <div class="container">© 2025 Noted It!</div>
+    <div class="container" id="footerText">© 2025 Noted It!</div>
   </footer>
 
   <!-- FAQ Modal -->
@@ -53,7 +57,8 @@
     <div class="modal-content">
       <button id="faqClose" class="modal-close">✕</button>
       <h2 id="faqTitle">FAQ</h2>
-      <div id="faqList"></div>
+      <div id="faqList" class="faq-list"></div>
+      <button id="faqBack" class="ghost">← <span data-i18n="back">Επιστροφή</span></button>
     </div>
   </div>
 
@@ -72,6 +77,10 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <!-- context menu placeholder -->
+  <div id="ctx" class="custom-ctx hidden"></div>
+
+  <!-- main module loader (ES module) -->
+  <script type="module" src="app.js"></script>
 </body>
 </html>
